@@ -3,14 +3,26 @@ const todoInput = document.querySelector(".todo-input");
 const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
 const filterOption = document.querySelector(".filter-todo");
+const resetButton = document.querySelector(".clear-all");
+
 
 //Event Listeners
 todoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteCheck);
 filterOption.addEventListener("click", filterTodo);
 document.addEventListener('DOMContentLoaded', getTodos);
+resetButton.addEventListener('click', resetData);
 
 //Functions
+//function: resetData
+
+function resetData(){
+    localStorage.clear();
+    window.location.reload(); 
+}
+
+
+
 
 function addTodo(event) {
   event.preventDefault();
